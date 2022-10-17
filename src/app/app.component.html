@@ -1,0 +1,92 @@
+
+<body style="background-color:gray">
+<!-- container -->
+<div class="container p-3">
+
+  <!-- linha central -->
+  <div class="row p-3">
+
+
+    <!-- coluna esquerda -->
+    <div class="col-3">
+    </div>
+    <!-- fim coluna esquerda -->
+
+
+
+    <!-- coluna central -->
+    <div class="col-6 bg-dark border border-dark rounded-3 border-2" [formGroup]="formMateria">
+      <div class="row">
+        <h3 class="p-3 text-white">Registro de Matérias</h3>
+      </div>
+      <form form="registroMateria">
+        <h6 class="text-white">Nome da Matéria</h6>
+        <input formControlName = "nomeMateria" type="text" class="form-control border-dark bg-secondary text-white" id="nomeMateria" placeholder="nome-da-materia" value="" required="true">
+        <br>
+        <h6 class="text-white">Carga Horária</h6>
+        <input formControlName = "cargaHoraria" type="text" class="form-control border-dark bg-secondary text-white" id="cargaHoraria" placeholder="carga-horaria" value="" required="true">
+        <br>
+        <h6 class="text-white">Escola</h6>
+        <input formControlName = "nomeEscola" type="text" class="form-control border-dark bg-secondary text-white" id="nomeEscola" placeholder="nome-da-escola" value="" required="true">
+        <br>
+        <!-- Form Dados Materia -->
+        <div formGroupName = "formDadosMateria">
+        <h6 class="text-white">Professor</h6>
+        <select formControlName = "nomeProfessor" class="form-select border-dark bg-secondary text-white" aria-label="Default select example" required="true">
+          <!-- <option selected>Escolha o professor dessa matéria</option> -->
+          <option value="Otavio">Otávio</option>
+          <option value="Vivian">Vivian</option>
+          <option value="Leandro">Leandro</option>
+          <option value="Claudia">Claudia</option>
+        </select>
+        <br>
+        <h6 class="text-white">Obrigatoriedade</h6>
+        <div class="form-check text-white">
+          <input formControlName="rbMateria" class="form-check-input border-dark" type="radio" name="rbMateria" id="materiaObrigatoria" value="Materia Obrigatoria" required="true">
+          <label class="form-check-label" for="materiaObrigatoria">
+            Matéria Obrigatória
+          </label>
+        </div>
+        <div class="form-check text-white">
+          <input formControlName="rbMateria" class="form-check-input border-dark" type="radio" name="rbMateria" id="materiaOpcional" value="Materia Opcional" required="true">
+          <label class="form-check-label" for="materiaOpcional">
+            Matéria Opcional
+          </label>
+        </div>
+        </div>
+        <!-- Form Dados Materia fim  -->
+        <br>
+        <!-- linha botao -->
+        <div class="row text-center">
+          <div class="col d-grid gap-2">
+            <button [disabled]="formMateria.invalid" class="btn btn-primary border-dark" type="submit" form="registroMateria" (click)="goConsole()">Registrar</button>
+          </div>
+          <div class="col d-grid gap-2">
+            <button [disabled]="formMateria.invalid" class="btn btn-danger border-dark" type="submit" form="registroMateria" (click)="reset()">Reset Formulario</button>
+          </div>
+        </div>
+        <!-- linha botao fim -->
+        <br>
+      </form>
+    </div>
+    <!-- fim coluna central -->
+
+
+
+
+    <!-- coluna direita -->
+    <div class="col-3">
+    </div>
+    <!-- fim coluna direita -->
+
+
+  </div>
+  <!-- fim linha central -->
+
+
+
+
+
+</div>
+<!-- fim container -->
+</body>
